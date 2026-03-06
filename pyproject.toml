@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcstft"
+dynamic = ["version"]
+description = "Mapping critical strain to fracture toughness."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = []
+authors = [{ name = "Nicolas Mokus", email = "nmks@tuta.io" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = ["scipy", "numpy", "SWIIFT"]
+
+[project.urls]
+Documentation = "https://github.com/sasip-project/mcstft#readme"
+Issues = "https://github.com/sasip-project/mcstft/issues"
+Source = "https://github.com/sasip-project/mcstft"
+
+[tool.hatch.version]
+path = "src/mcstft/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/mcstft tests}"
+
+[tool.coverage.run]
+source_pkgs = ["mcstft", "tests"]
+branch = true
+parallel = true
+omit = ["src/mcstft/__about__.py"]
+
+[tool.coverage.paths]
+mcstft = ["src/mcstft", "*/mcstft/src/mcstft"]
+tests = ["tests", "*/mcstft/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
