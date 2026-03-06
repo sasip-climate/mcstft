@@ -22,9 +22,9 @@ classifiers = [
 dependencies = ["scipy", "numpy", "SWIIFT"]
 
 [project.urls]
-Documentation = "https://github.com/sasip-project/mcstft#readme"
-Issues = "https://github.com/sasip-project/mcstft/issues"
-Source = "https://github.com/sasip-project/mcstft"
+Documentation = "https://github.com/sasip-climate/mcstft#readme"
+Issues = "https://github.com/sasip-climate/mcstft/issues"
+Source = "https://github.com/sasip-climate/mcstft"
 
 [tool.hatch.version]
 path = "src/mcstft/__about__.py"
