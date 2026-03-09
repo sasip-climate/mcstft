@@ -19,7 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
-dependencies = ["scipy", "numpy", "SWIIFT"]
+dependencies = ["scipy", "numpy", "SWIIFT", "tqdm"]
 
 [project.urls]
 Documentation = "https://github.com/sasip-climate/mcstft#readme"
